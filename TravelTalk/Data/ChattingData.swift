@@ -36,7 +36,11 @@ struct Chat {
     let date: String
     let message: String
 }
-
+//data for vc => csvc
+var newList: [Chat] = []
+//채팅방 이름 쓰려고 만든 데이터
+var eachChatRoomName: String = ""
+//
 let mockChatList: [ChatRoom] = [
     ChatRoom(chatroomId: 1,
              chatroomImage: [User.hue.profileImage, User.jack.profileImage, User.bran.profileImage, User.den.profileImage],

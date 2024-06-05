@@ -35,6 +35,7 @@ class ViewController: UIViewController {
     
 }
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         mockChatList.count
     }
@@ -43,6 +44,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let vc = storyboard?.instantiateViewController(identifier: "ChatSceneViewController") as! ChatSceneViewController
         //3.회면 띄우기
         navigationController?.pushViewController(vc, animated: true)
+        //data for vc => csvc
+        newList = mockChatList[indexPath.row].chatList
+        //채팅방 이름 쓰려고 만든 데이터
+        eachChatRoomName = mockChatList[indexPath.row].chatroomName
+        //
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if mockChatList[indexPath.row].chatroomImage.count == 4 {
@@ -74,7 +80,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             //String 타입으로 된 Date를 내가 원하는 형태로 변경하고자 할 때
             
             cell.dateLabel.font = .systemFont(ofSize: 14)
-
             
             return cell
         }

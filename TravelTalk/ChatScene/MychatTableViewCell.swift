@@ -9,6 +9,8 @@ import UIKit
 
 class MychatTableViewCell: UITableViewCell {
 
+    @IBOutlet var chatLabel: UILabel!
+    @IBOutlet var dataLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
