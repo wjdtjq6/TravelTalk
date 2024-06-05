@@ -22,15 +22,17 @@ class ChatSceneViewController: UIViewController {
         tableView.register(xib2, forCellReuseIdentifier: "OtherchatTableViewCell")
         
         navigationItem.title = eachChatRoomName
-        navigationController?.navigationItem.leftBarButtonItem?.image = UIImage(systemName: "lessthan")
-        navigationController?.navigationItem.leftBarButtonItem?.title = ""
+        tableView.separatorStyle = .none
+//        navigationController?.navigationItem.leftBarButtonItem?.image = UIImage(systemName: "lessthan")
+//        navigationController?.navigationItem.leftBarButtonItem?.title = ""
+        self.navigationItem.leftBarButtonItem?.image = UIImage(systemName: "lessthan")
+        self.navigationController?.navigationItem.leftBarButtonItem?.tintColor = .black
     }
 
 }
 extension ChatSceneViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        //UITableView.automaticDimension
-        100
+        150
     }
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //mockChatList[indexPath.row].chatList.count
@@ -42,7 +44,12 @@ extension ChatSceneViewController: UITableViewDelegate, UITableViewDataSource {
         if newList[indexPath.row].user == User.user {
             let cell = tableView.dequeueReusableCell(withIdentifier: "MychatTableViewCell") as! MychatTableViewCell
             cell.chatLabel.text = newList[indexPath.row].message
-            
+            cell.chatLabel.numberOfLines = 0
+            cell.chatLabel.font = .systemFont(ofSize: 14)
+            cell.chatLabel.layer.borderColor = UIColor.black.cgColor
+            cell.chatLabel.layer.cornerRadius = 20
+            cell.chatLabel.layer.borderWidth = 1
+            cell.chatLabel.layer.backgroundColor = UIColor.lightGray.cgColor
             //cell.dataLabel.text = newList[indexPath.row].date
             //String 타입으로 된 Date를 내가 원하는 형태로 변경하고자 할 때
             let dateStr = newList[indexPath.row].date // Date 형태의 String
@@ -59,6 +66,9 @@ extension ChatSceneViewController: UITableViewDelegate, UITableViewDataSource {
             
             cell.dataLabel.text = convertStr
             //String 타입으로 된 Date를 내가 원하는 형태로 변경하고자 할 때
+            cell.dataLabel.textAlignment = .right
+            cell.dataLabel.font = .systemFont(ofSize: 14)
+            cell.dataLabel.textColor = .lightGray
             
             return cell
         }
@@ -66,7 +76,15 @@ extension ChatSceneViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "OtherchatTableViewCell") as! OtherchatTableViewCell
             cell.profileImageView.image = UIImage(named: newList[indexPath.row].user.profileImage)
             cell.nameLabel.text = newList[indexPath.row].user.rawValue
+            cell.nameLabel.font = .systemFont(ofSize: 14)
+            
             cell.chatLabel.text = newList[indexPath.row].message
+            cell.chatLabel.numberOfLines = 0
+            cell.chatLabel.font = .systemFont(ofSize: 14)
+            cell.chatLabel.layer.borderColor = UIColor.black.cgColor
+            cell.chatLabel.layer.cornerRadius = 10
+            cell.chatLabel.layer.borderWidth = 1
+            
             print(newList[indexPath.row].user.profileImage)
             print(newList[indexPath.row].user.rawValue)
             
@@ -93,6 +111,11 @@ extension ChatSceneViewController: UITableViewDelegate, UITableViewDataSource {
             
             cell.dataLabel.text = convertStr
             //String 타입으로 된 Date를 내가 원하는 형태로 변경하고자 할 때
+            cell.dataLabel.textAlignment = .right
+            cell.dataLabel.font = .systemFont(ofSize: 14)
+            cell.dataLabel.textColor = .lightGray
+            cell.dataLabel.textAlignment = .left
+            
             return cell
         }
         

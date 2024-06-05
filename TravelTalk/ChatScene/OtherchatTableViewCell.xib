@@ -24,9 +24,9 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACR-6g-f8j">
-                        <rect key="frame" x="74" y="16" width="42" height="21"/>
+                        <rect key="frame" x="74" y="16" width="200" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="ACR-6g-f8j" secondAttribute="height" multiplier="2:1" id="Nn7-bV-wDw"/>
+                            <constraint firstAttribute="width" constant="200" id="rhg-VZ-7gH"/>
                             <constraint firstAttribute="height" constant="21" id="yPe-fy-WQC"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -34,13 +34,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyH-pe-8wM">
-                        <rect key="frame" x="74" y="45" width="41.333333333333343" height="20.333333333333329"/>
+                        <rect key="frame" x="74" y="45" width="164" height="20.333333333333329"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAV-hm-0Y2">
-                        <rect key="frame" x="123.33333333333331" y="73" width="100" height="21"/>
+                        <rect key="frame" x="246" y="73" width="100" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="BZd-l7-B3C"/>
                             <constraint firstAttribute="width" constant="100" id="aY7-CL-Lgy"/>
@@ -54,6 +54,7 @@
                     <constraint firstItem="ACR-6g-f8j" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="DWW-NZ-hd7"/>
                     <constraint firstItem="TT0-LH-uKO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="J0L-jS-roV"/>
                     <constraint firstItem="ACR-6g-f8j" firstAttribute="leading" secondItem="TT0-LH-uKO" secondAttribute="trailing" constant="8" id="LeK-Tm-FLr"/>
+                    <constraint firstAttribute="trailing" secondItem="gyH-pe-8wM" secondAttribute="trailing" constant="150" id="NXM-jZ-lgi"/>
                     <constraint firstItem="bAV-hm-0Y2" firstAttribute="leading" secondItem="gyH-pe-8wM" secondAttribute="trailing" constant="8" id="VFe-YW-zum"/>
                     <constraint firstAttribute="bottom" secondItem="bAV-hm-0Y2" secondAttribute="bottom" constant="16" id="h0G-km-l7I"/>
                     <constraint firstItem="gyH-pe-8wM" firstAttribute="top" secondItem="ACR-6g-f8j" secondAttribute="bottom" constant="8" id="lki-pp-Ni5"/>
